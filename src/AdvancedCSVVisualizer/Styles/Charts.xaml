@@ -1,0 +1,208 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF">
+
+    <!-- LiveCharts Styles -->
+    
+    <!-- CartesianChart (Line & Bar) Base Style -->
+    <Style x:Key="BaseCartesianChartStyle" TargetType="{x:Type lvc:CartesianChart}">
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="AnimationsSpeed" Value="00:00:00.700" />
+        <Setter Property="TooltipPosition" Value="Top" />
+        <Setter Property="TooltipFontSize" Value="14" />
+        <Setter Property="TooltipFontFamily" Value="{StaticResource MaterialDesignFont}" />
+        <Setter Property="LegendPosition" Value="Bottom" />
+        <Setter Property="LegendFontSize" Value="12" />
+        <Setter Property="LegendFontFamily" Value="{StaticResource MaterialDesignFont}" />
+        <Setter Property="DrawMargin" Value="10, 10, 10, 10" />
+        <Setter Property="ZoomMode" Value="X" />
+    </Style>
+    
+    <!-- Line Chart Style -->
+    <Style x:Key="LineChartStyle" TargetType="{x:Type lvc:CartesianChart}" BasedOn="{StaticResource BaseCartesianChartStyle}">
+        <!-- Line chart specific settings -->
+    </Style>
+    
+    <!-- Bar Chart Style -->
+    <Style x:Key="BarChartStyle" TargetType="{x:Type lvc:CartesianChart}" BasedOn="{StaticResource BaseCartesianChartStyle}">
+        <!-- Bar chart specific settings -->
+    </Style>
+    
+    <!-- Diverging Bar Chart Style -->
+    <Style x:Key="DivergingBarChartStyle" TargetType="{x:Type lvc:CartesianChart}" BasedOn="{StaticResource BaseCartesianChartStyle}">
+        <!-- Diverging bar chart specific settings -->
+        <Setter Property="ZoomMode" Value="None" />
+    </Style>
+    
+    <!-- Pie Chart Style -->
+    <Style x:Key="PieChartStyle" TargetType="{x:Type lvc:PieChart}">
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="AnimationsSpeed" Value="00:00:00.700" />
+        <Setter Property="TooltipPosition" Value="Center" />
+        <Setter Property="TooltipFontSize" Value="14" />
+        <Setter Property="TooltipFontFamily" Value="{StaticResource MaterialDesignFont}" />
+        <Setter Property="LegendPosition" Value="Right" />
+        <Setter Property="LegendFontSize" Value="12" />
+        <Setter Property="LegendFontFamily" Value="{StaticResource MaterialDesignFont}" />
+        <Setter Property="InitialRotation" Value="-90" />
+        <Setter Property="MaxAngle" Value="360" />
+    </Style>
+    
+    <!-- Chart Container Styles -->
+    
+    <!-- Base Chart Container Style -->
+    <Style x:Key="ChartContainerStyle" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource BackgroundLighterBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource SurfaceBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="Margin" Value="8" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect ShadowDepth="2" Direction="270" Color="Black" Opacity="0.3" BlurRadius="8" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- Chart Header Style -->
+    <Style x:Key="ChartHeaderStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Margin" Value="0,0,0,16" />
+    </Style>
+    
+    <!-- Chart Controls Container Style -->
+    <Style x:Key="ChartControlsStyle" TargetType="{x:Type StackPanel}">
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Margin" Value="0,0,0,8" />
+    </Style>
+    
+    <!-- Chart Legend Container Style -->
+    <Style x:Key="ChartLegendContainerStyle" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource BackgroundLighterBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource SurfaceBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="Margin" Value="0,8,0,0" />
+    </Style>
+    
+    <!-- Chart Legend Item Style -->
+    <Style x:Key="ChartLegendItemStyle" TargetType="{x:Type StackPanel}">
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="Margin" Value="4" />
+    </Style>
+    
+    <!-- Chart Legend Color Indicator Style -->
+    <Style x:Key="ChartLegendColorStyle" TargetType="{x:Type Rectangle}">
+        <Setter Property="Width" Value="12" />
+        <Setter Property="Height" Value="12" />
+        <Setter Property="Margin" Value="0,0,8,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    
+    <!-- Chart Legend Text Style -->
+    <Style x:Key="ChartLegendTextStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BodySmallTextStyle}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    
+    <!-- Chart Value Indicator Styles -->
+    
+    <!-- Chart Value Indicator Container Style -->
+    <Style x:Key="ChartValueContainerStyle" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource SurfaceBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource SurfaceLightBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="Margin" Value="4" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+    
+    <!-- Chart Value Label Style -->
+    <Style x:Key="ChartValueLabelStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource LabelSmallTextStyle}">
+        <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}" />
+        <Setter Property="Margin" Value="0,0,0,2" />
+    </Style>
+    
+    <!-- Chart Value Text Style -->
+    <Style x:Key="ChartValueTextStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource TitleSmallTextStyle}">
+        <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
+    </Style>
+    
+    <!-- Chart Value Indicator Style for Positive Values -->
+    <Style x:Key="ChartValuePositiveStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BodySmallTextStyle}">
+        <Setter Property="Foreground" Value="{StaticResource SuccessBrush}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Margin" Value="4,0,0,0" />
+    </Style>
+    
+    <!-- Chart Value Indicator Style for Negative Values -->
+    <Style x:Key="ChartValueNegativeStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BodySmallTextStyle}">
+        <Setter Property="Foreground" Value="{StaticResource ErrorBrush}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Margin" Value="4,0,0,0" />
+    </Style>
+    
+    <!-- Time Period Selector Styles -->
+    
+    <!-- Time Period Container Style -->
+    <Style x:Key="TimePeriodContainerStyle" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource BackgroundLighterBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource SurfaceBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="Margin" Value="0,0,8,0" />
+    </Style>
+    
+    <!-- Time Period Button Style -->
+    <Style x:Key="TimePeriodButtonStyle" TargetType="{x:Type RadioButton}" BasedOn="{StaticResource MaterialDesignTabRadioButton}">
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Padding" Value="8,4" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!-- Data Series Selector Styles -->
+    
+    <!-- Series Selector Container Style -->
+    <Style x:Key="SeriesSelectorContainerStyle" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{StaticResource BackgroundLighterBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource SurfaceBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="Margin" Value="0,8,0,0" />
+    </Style>
+    
+    <!-- Series Selector Item Style -->
+    <Style x:Key="SeriesSelectorItemStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Margin" Value="0,2" />
+    </Style>
+    
+    <!-- Series Selector Checkbox Style -->
+    <Style x:Key="SeriesSelectorCheckboxStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource AppCheckBoxStyle}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    
+    <!-- Series Selector Color Indicator Style -->
+    <Style x:Key="SeriesSelectorColorStyle" TargetType="{x:Type Rectangle}">
+        <Setter Property="Width" Value="12" />
+        <Setter Property="Height" Value="12" />
+        <Setter Property="Margin" Value="8,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+</ResourceDictionary>
